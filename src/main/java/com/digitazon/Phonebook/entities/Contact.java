@@ -65,7 +65,5 @@ public class Contact {
         this.favourite = favourite;
     }
 
-    public boolean isDone() {
-        return false;
-    }
+
 }

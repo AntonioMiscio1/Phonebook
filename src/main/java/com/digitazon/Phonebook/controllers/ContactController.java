@@ -29,10 +29,9 @@ public class ContactController {
     @PutMapping("/{id}")
     public Contact update(@PathVariable int id, @RequestBody Contact updatedContact) throws Exception {
         Contact contact = contactRepository.findById(id).orElseThrow();
-        if (contact.isDone()) {
-            throw new Exception("non puoi salvare un contatto già salvato");
-        }
         contact.setName(updatedContact.getName());
+        contact.setSurname(updatedContact.getSurname());
+        contact.setPhoneNumber(updatedContact.getPhoneNumber());
         return contactRepository.save(contact);
     }
 
